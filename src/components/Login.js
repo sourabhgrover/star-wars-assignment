@@ -1,6 +1,11 @@
 import React from "react";
 import "../css/Login.css";
+import { Field, reduxForm } from "redux-form";
 
+const renderTextField = formProps => {
+  console.log(formProps);
+  return <input {...formProps.input} />;
+};
 class Login extends React.Component {
   render() {
     return (
@@ -9,11 +14,13 @@ class Login extends React.Component {
           Sign in
         </p>
         <form className="form1">
-          <input
-            className="un "
+          <Field
+            className="un"
             type="text"
             align="center"
             placeholder="Username"
+            name="username"
+            component={renderTextField}
           />
           <input
             className="pass"
@@ -30,4 +37,6 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default reduxForm({
+  form: "Login"
+})(Login);
