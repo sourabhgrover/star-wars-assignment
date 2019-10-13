@@ -2,10 +2,10 @@ import React from "react";
 import "../css/Login.css";
 import { Field, reduxForm } from "redux-form";
 
-const renderTextField = formProps => {
-  console.log(formProps);
-  return <input {...formProps.input} />;
+const renderTextField = ({ input, meta, ...rest }) => {
+  return <input {...input} {...rest} />;
 };
+
 class Login extends React.Component {
   render() {
     return (
@@ -22,11 +22,14 @@ class Login extends React.Component {
             name="username"
             component={renderTextField}
           />
-          <input
+
+          <Field
             className="pass"
             type="password"
             align="center"
             placeholder="Password"
+            name="password"
+            component={renderTextField}
           />
           <button className="submit" align="center">
             Sign in
