@@ -24,7 +24,6 @@ const renderTextField = ({ input, meta, ...rest }) => {
 
 class Login extends React.Component {
   onSubmitForm = formValues => {
-    console.log("Asas");
     this.props.login(formValues);
   };
   render() {
