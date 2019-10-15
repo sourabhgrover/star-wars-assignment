@@ -32,6 +32,10 @@ class Login extends React.Component {
         <p className="sign" align="center">
           Sign in
         </p>
+
+        <div style={{ color: "red", textAlign: "center" }}>
+          {this.props.error}
+        </div>
         <form
           className="form1"
           onSubmit={this.props.handleSubmit(this.onSubmitForm)}
