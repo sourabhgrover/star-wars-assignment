@@ -4,6 +4,7 @@ import { persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 
 import authReducer from "./authReducer";
+import planetReducer from "./planetReducer";
 
 const persistConfig = {
   key: "root",
@@ -13,7 +14,8 @@ const persistConfig = {
 
 const combineReducer = combineReducers({
   form: formReducer,
-  auth: authReducer
+  auth: authReducer,
+  planets: planetReducer
 });
 
 export default persistReducer(persistConfig, combineReducer);
